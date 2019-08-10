@@ -1,6 +1,8 @@
-py_runtime(
-  name = "python-3.6.3",
-  files = [],
-  interpreter = "@python3//:python",
-  python_version = "PY3"
+py_test(
+  name = "test_binding",
+  srcs = ["test_binding.py"],
+  deps = ["//binding"],
+  python_version = "PY3",
+  legacy_create_init = False,
+  timeout = "short",
 )

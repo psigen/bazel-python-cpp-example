@@ -1,14 +1,20 @@
-cc_library(
+# Adapted from: https://github.com/bazelbuild/bazel/issues/1475
+cc_binary(
   name = "binding.so",
   srcs = ["binding.cpp"],
+  copts = ["-I/usr/include/python3.5/"],
+  linkshared = 1,
+  linkstatic = 1,
   deps = [
     "@pybind11//:pybind11",
-    "@python3//:dev"
-  ]
+    "//native"
+  ],
+  visibility = ["//visibility:public"],
 )
 
 py_library(
   name = 'binding',
   data=[':binding.so'],
-  imports=['.']
+  imports=['.'],
+  visibility = ["//visibility:public"],
 )
