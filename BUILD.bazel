@@ -1,0 +1,6 @@
+py_runtime(
+  name = "python-3.6.3",
+  files = [],
+  interpreter = "@python3//:python",
+  python_version = "PY3"
+)

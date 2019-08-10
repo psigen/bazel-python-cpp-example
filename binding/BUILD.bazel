@@ -1,0 +1,14 @@
+cc_library(
+  name = "binding.so",
+  srcs = ["binding.cpp"],
+  deps = [
+    "@pybind11//:pybind11",
+    "@python3//:dev"
+  ]
+)
+
+py_library(
+  name = 'binding',
+  data=[':binding.so'],
+  imports=['.']
+)
