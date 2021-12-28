@@ -1,4 +1,4 @@
-# bazel_python_cpp
+# bazel-python-cpp-example
 
 Example of a bazel python/cpp binding that includes a transitive dependency.
 
